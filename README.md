@@ -14,6 +14,12 @@ Features
 * vtk file export of ray paths and radiation patterns
 
 
+Requirements
+------------
+```
+obspy 1.1.0
+```
+
 Installation
 ------------
 The module just needs to be downloaded, for example with:
