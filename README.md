@@ -31,7 +31,7 @@ Another option is to install the python routines to the system with
 ```
 pip install .
 ```
-before using the plot scripts. Type `./plot_rays.py --help` to get some
+before using the plot scripts type `./plot_rays.py --help` to get some
 information on how to use.
 
 ### interactive plotting
