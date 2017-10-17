@@ -115,7 +115,9 @@ def _write_vtk_files(inventory, catalog,
     npoints_tot = 0  # this is the total number of points of all rays
     istart_ray = 0  # this is the first point of each ray in the loop
     points = []
-    for gcircle, name, stlabel, evlabel in greatcircles:
+    for gcircle, name, stlabel, time, magnitude, evid, _ in greatcircles:
+        date = UTCDateTime(time)
+        evlabel = '{:s} | M{:.1f}'.format(str(date.date), magnitude)
         points_ray = gcircle[:, ::3]  # use every third point
         ndim, npoints_ray = points_ray.shape
         iend_ray = istart_ray + npoints_ray
