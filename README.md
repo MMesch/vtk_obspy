@@ -4,12 +4,27 @@ VTKOBS
 Python toolbox for VTK visualizations of seismology related themes. This
 package is based on obspy.
 
-## Features
+Features
+--------
+
 * 3D ray path visualizations
 * vtk file export of ray paths
 * moment tensor visualizations
 
-## Example
+Installation
+------------
+
+The module should be downloaded, for example with:
+
+```
+git clone https://github.com/MMesch/vtkobs.git
+```
+
+and then executed from the installation directory
+
+Example
+-------
+
 this command:
 
 ```
@@ -21,11 +36,3 @@ produces this plot:
 ![image](images/example1.png)
 
 
-## Installation
-The module should be downloaded, for example with:
-
-```
-git clone https://github.com/MMesch/vtkobs.git
-```
-
-and then executed from the installation directory
