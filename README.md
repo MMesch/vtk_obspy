@@ -1,5 +1,5 @@
-VTKOBS
-======
+VTK OBSPY
+=========
 
 
 Python toolbox for VTK visualizations of seismology related themes. This
