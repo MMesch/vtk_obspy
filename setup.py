@@ -7,15 +7,11 @@ from __future__ import absolute_import as _absolute_import
 from __future__ import division as _division
 from __future__ import print_function as _print_function
 
-import os
-import re
 # the setuptools import dummy patches the distutil commands such that
 # python setup.py develop works
 import setuptools  # NOQA
 
 from numpy.distutils.core import setup
-from subprocess import CalledProcessError, check_output
-
 
 # convert markdown README.md to restructured text .rst for pypi
 # pandoc can be installed with
@@ -29,58 +25,7 @@ except(IOError, ImportError):
     long_description = open('README.md').read()
 
 
-# This flag has to be True if the version number indicated in the file
-# VERSION has already been released and to False if this is a development
-# version of a future release.
-ISRELEASED = True
-
-
-def get_version():
-    """Get version from git and VERSION file.
-
-    In case that the version is not tagged in git, this function appends
-    .post0+commit if the version has been released and .dev0+commit if the
-    version has not been released yet.
-
-    Derived from: https://github.com/Changaco/version.py
-    """
-    d = os.path.dirname(__file__)
-    # get release number from VERSION
-    with open(os.path.join(d, 'VERSION')) as f:
-        vre = re.compile('.Version: (.+)$', re.M)
-        version = vre.search(f.read()).group(1)
-
-    if os.path.isdir(os.path.join(d, '.git')):
-        # Get the version using "git describe".
-        cmd = 'git describe --tags'
-        try:
-            git_version = check_output(cmd.split()).decode().strip()[1:]
-        except CalledProcessError:
-            print('Unable to get version number from git tags\n'
-                  'Setting to x.x')
-            git_version = 'x.x'
-
-        # PEP440 compatibility
-        if '-' in git_version:
-            # check that the version string is a floating number
-            try:
-                version = '{:.1f}'.format(float(version))
-            except ValueError:
-                msg = 'VERSION string should be floating number'
-                raise ValueError(msg)
-            git_revision = check_output(['git', 'rev-parse', 'HEAD'])
-            git_revision = git_revision.strip().decode('ascii')
-            # add post0 if the version is released
-            # otherwise add dev0 if the version is not yet released
-            if ISRELEASED:
-                version += '.post0+' + git_revision[:7]
-            else:
-                version += '.dev0+' + git_revision[:7]
-
-    return version
-
-
-VERSION = get_version()
+VERSION = 1.0
 print('obspy 3d visualization package version: {}'.format(VERSION))
 
 

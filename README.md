@@ -22,7 +22,10 @@ produces this plot:
 
 
 ## Installation
-The module can be installed directly from github using:
+The module should be downloaded, for example with:
+
 ```
-pip install git+https://github.com/MMesch/vtkobs.git
+git clone https://github.com/MMesch/vtkobs.git
 ```
+
+and then executed from the installation directory
