@@ -38,6 +38,15 @@ Be careful, you might need to downgrade pyqt to version 4 instead of 5.
 Example
 -------
 
+### VTK file export
+plotting with the ``--vtkfiles`` option produces vtk files that can be
+visualized with paraview.
+
+```
+./plot_rays.py --inv data/IU_stations.txt --phases P,Pdiff,PKP --evlat 0
+               --evlon 20 --vtkfiles
+```
+
 ### interactive plot
 this command:
 
@@ -48,12 +57,3 @@ this command:
 produces this plot:
 
 ![image](images/example1.png)
-
-### VTK file export
-just add the ``--vtkfiles`` option to get vtk files that can be visualized with
-paraview.
-
-```
-./plot_rays.py --inv data/IU_stations.txt --phases P,Pdiff,PKP --evlat 0
-               --evlon 20 --vtkfiles
-```
