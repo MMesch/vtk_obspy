@@ -69,8 +69,8 @@ $ ./plot_rays.py --help
 usage: ./plot_rays.py --cat catalog.xml --inv inventory.xml
 ./plot_rays.py --cat catalog.xml --stlat 20 --stlon 30
 
-Lunch a 3D visualization of ray paths. The station andevent coordinates have
-to be given by the appropriatearguments.
+Lunch a 3D visualization of ray paths. The station and event coordinates have
+to be given by the appropriate arguments.
 
 optional arguments:
   -h, --help            show this help message and exit
