@@ -20,7 +20,14 @@ The module should be downloaded, for example with:
 git clone https://github.com/MMesch/vtkobs.git
 ```
 
-and then executed from the installation directory
+The plot scripts should be executed from the installation directory. Another
+option is to install the python routines systemwide with
+
+```
+pip install .
+```
+
+before using the plot scripts.
 
 Example
 -------
