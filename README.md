@@ -10,7 +10,8 @@ Features
 --------
 
 * 3D ray path visualizations
-* vtk file export of ray paths
+* 3D moment tensor radiation pattern visualization
+* vtk file export of ray paths and radiation patterns
 
 
 Installation
@@ -36,21 +37,8 @@ conda install -c menpo mayavi
 Be careful, you might need to downgrade pyqt to version 4 instead of 5.
 
 
-Example
--------
-
-### VTK file export
-plotting with the ``--vtkfiles`` option produces vtk files that can be
-visualized with paraview.
-
-```
-./plot_rays.py --inv data/IU_stations.txt --phases Pdiff,PKIKP --evlat 0
-               --evlon 20 --vtkfiles
-
-./plot_mtensor.py --mt 1,0,0,-1,1,0 --vtkfiles
-```
-
-### interactive ray path plot
+## 3D Ray Path Plots
+### interactive
 this command:
 
 ```
@@ -62,15 +50,14 @@ produces this plot:
 
 ![image](images/example1.png)
 
-### interactive moment tensor plot
-this command:
+### VTK files
+plotting with the ``--vtkfiles`` option produces vtk files that can be
+visualized with paraview.
 
 ```
-./plot_mtensor.py --mt 1,0,0,-1,1,0
+./plot_rays.py --inv data/IU_stations.txt --phases Pdiff,PKIKP --evlat 0
+               --evlon 20 --vtkfiles
 ```
-produces this plot:
-
-![image](images/example2.png)
 
 ### plot_rays.py command line options
 ```
@@ -81,7 +68,7 @@ $ ./plot_rays.py --help
 usage: ./plot_rays.py --cat catalog.xml --inv inventory.xml
 ./plot_rays.py --cat catalog.xml --stlat 20 --stlon 30
 
-Lunch a 3D visualization of ray paths. The station and event coordinates have
+3D visualization of ray paths. The station and event coordinates have
 to be given by the appropriate arguments.
 
 optional arguments:
@@ -101,6 +88,26 @@ optional arguments:
                         dark or bright
 ```
 
+
+## 3D Moment tensor plots
+### VTK files
+plotting with the ``--vtkfiles`` option produces vtk files that can be
+visualized with paraview.
+```
+./plot_mtensor.py --mt 1,0,0,-1,1,0 --vtkfiles
+```
+
+### interactive
+this command:
+
+```
+./plot_mtensor.py --mt 1,0,0,-1,1,0
+```
+produces this plot:
+
+![image](images/example2.png)
+
+
 ### plot_mtensor.py command line options
 ```
 $ ./plot_mtensor.py --help
@@ -109,7 +116,7 @@ $ ./plot_mtensor.py --help
 ```
 usage: ./plot_mtensor.py --mt 1,0,0,1,-1,0
 
-Lunch a 3D visualization of moment tensor radiation paptterns.
+3D visualization of moment tensor radiation patterns.
 
 optional arguments:
   -h, --help  show this help message and exit

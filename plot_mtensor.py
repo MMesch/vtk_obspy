@@ -25,8 +25,8 @@ def main():
 
 def get_arguments():
     """Return AttribDict with command line arguments."""
-    description = ('Lunch a 3D visualization of moment tensor radiation '
-                   'paptterns.')
+    description = ('3D visualization of moment tensor radiation '
+                   'patterns.')
     usage = ('./plot_mtensor.py --mt 1,0,0,1,-1,0')
 
     parser = argparse.ArgumentParser(description=description, usage=usage)
