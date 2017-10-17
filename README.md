@@ -46,21 +46,33 @@ visualized with paraview.
 ```
 ./plot_rays.py --inv data/IU_stations.txt --phases Pdiff,PKIKP --evlat 0
                --evlon 20 --vtkfiles
+
+./plot_mtensor.py --mt 1,0,0,-1,1,0 --vtkfiles
 ```
 
-### interactive plot
+### interactive ray path plot
 this command:
 
 ```
 ./plot_rays.py --inv data/IU_stations.txt --phases Pdiff,PKIKP --evlat 0
                --evlon 20
-```
 
+```
 produces this plot:
 
 ![image](images/example1.png)
 
-### command line options
+### interactive moment tensor plot
+this command:
+
+```
+./plot_mtensor.py --mt 1,0,0,-1,1,0
+```
+produces this plot:
+
+![image](images/example2.png)
+
+### plot_rays.py command line options
 ```
 $ ./plot_rays.py --help
 ```
@@ -87,4 +99,20 @@ optional arguments:
   --vtkfiles            vtk files instead of mayavi
   --colorscheme COLORSCHEME
                         dark or bright
+```
+
+### plot_mtensor.py command line options
+```
+$ ./plot_mtensor.py --help
+```
+
+```
+usage: ./plot_mtensor.py --mt 1,0,0,1,-1,0
+
+Lunch a 3D visualization of moment tensor radiation paptterns.
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --mt MT     M11,M22,M33,M12,M13,M23
+  --vtkfiles  vtk files instead of mayavi
 ```
