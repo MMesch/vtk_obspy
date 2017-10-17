@@ -49,14 +49,11 @@ CLASSIFIERS = [
 KEYWORDS = ['Obspy', 'VTK', 'Visualization', 'Mayavi', '3D Ray Paths']
 
 
-INSTALL_REQUIRES = [
-    'numpy (>=1.0.0)',
-    'scipy',
-    'matplotlib (>=1.5)']
+INSTALL_REQUIRES = ['obspy', 'mayavi']
 
 
 metadata = dict(
-    name='vtkobs',
+    name='vtk_obspy',
     version=VERSION,
     description='3d vtk based routines for obspy',
     long_description=long_description,
@@ -68,8 +65,8 @@ metadata = dict(
     keywords=KEYWORDS,
     requires=INSTALL_REQUIRES,
     platforms='OS Independent',
-    packages=['vtkobs'],
-    package_dir={'vtkobs': 'vtkobs'},
+    packages=['vtk_obspy'],
+    package_dir={'vtk_obspy': 'vtk_obspy'},
     classifiers=CLASSIFIERS
 )
 
