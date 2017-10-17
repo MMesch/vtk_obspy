@@ -9,7 +9,6 @@ Features
 
 * 3D ray path visualizations
 * vtk file export of ray paths
-* moment tensor visualizations
 
 Installation
 ------------
