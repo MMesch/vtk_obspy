@@ -32,7 +32,7 @@ Another option is to install the python routines to the system with
 pip install .
 ```
 before using the plot scripts type `./plot_rays.py --help` to get some
-information on how to use.
+usage information.
 
 ### interactive plotting
 For interactive plotting you need to install `mayavi 4.5.0` and make sure that
