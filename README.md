@@ -16,8 +16,12 @@ Features
 
 Requirements
 ------------
+You need to have obspy (`>1.1.0`) with geographiclib installed. This can be
+done with:
+
 ```
-obspy 1.1.0
+conda install -c conda_forge obspy
+pip install geographiclib
 ```
 
 Installation
