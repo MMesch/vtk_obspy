@@ -1,14 +1,20 @@
 #!/usr/bin/env python
 
-
 """
 Mayavi moment tensor visualizer.
 """
 
-
+import sys
+import os
 import argparse
 
-from vtk_obspy.source import plot_radiation_pattern
+file_dir = os.path.dirname(os.path.realpath(__file__))
+lib_dir = os.path.join(file_dir, 'lib')
+sys.path.insert(0, lib_dir)
+
+from vtk_obspy.source import plot_radiation_pattern  # NOQA
+
+del sys.path[0]
 
 
 def main():

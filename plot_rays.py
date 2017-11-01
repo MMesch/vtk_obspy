@@ -6,11 +6,19 @@ Mayavi ray path visualizer.
 """
 
 
+import sys
+import os
 import argparse
 import obspy
 from obspy import read_inventory, read_events
 
-from vtk_obspy.ray_paths import plot_rays
+file_dir = os.path.dirname(os.path.realpath(__file__))
+lib_dir = os.path.join(file_dir, 'lib')
+sys.path.insert(0, lib_dir)
+
+from vtk_obspy.ray_paths import plot_rays  # NOQA
+
+del sys.path[0]
 
 
 def main():
