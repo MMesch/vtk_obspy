@@ -108,6 +108,12 @@ def _write_vtk_files(inventory, catalog,
         inventory, catalog, phase_list=phase_list,
         coordinate_system='XYZ', taup_model=taup_model)
 
+    # sphere radii
+    r_earth_m = taup_model.model.radius_of_planet
+    r_earth = 1.0
+    r_cmb = (r_earth_m - taup_model.model.cmb_depth) / r_earth_m
+    r_iocb = (r_earth_m - taup_model.model.iocb_depth) / r_earth_m
+
     # now assemble all points, stations and connectivity
     stations = []  # unique list of stations
     events = []  # unique list of events
@@ -133,6 +139,20 @@ def _write_vtk_files(inventory, catalog,
 
         npoints_tot += npoints_ray
         istart_ray += npoints_ray
+
+    # write the ICB, CMB and Earth surface in one file
+    with open(fname_stations, 'w') as vtk_file:
+        # write some header information
+        vtk_header = ('# vtk DataFile Version 2.0\n'
+                      'station locations\n'
+                      'ASCII\n'
+                      'DATASET UNSTRUCTURED_GRID\n'
+                      'POINTS {:d} float\n'.format(3))
+        vtk_file.write(vtk_header)
+
+        # write a long list of all points
+        for location, stlabel in []:
+            vtk_file.write('{:.4e} {:.4e} {:.4e}\n'.format(*location))
 
     # write the ray paths in one file
     with open(fname_paths, 'w') as vtk_file:

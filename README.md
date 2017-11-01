@@ -40,7 +40,11 @@ it works. In anaconda this can be done with:
 ```
 conda install -c menpo mayavi
 ```
-Be careful, you might need to downgrade pyqt to version 4 instead of 5.
+Be careful, you might need to downgrade pyqt to version 4 instead of 5. This
+can be done with:
+```
+conda install pyqt=4
+```
 
 
 ## 3D Ray Path Plots
